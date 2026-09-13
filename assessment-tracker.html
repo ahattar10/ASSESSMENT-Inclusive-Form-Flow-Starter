@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Inclusive Form Flow - Project Tracker</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+        .tracker-table{
+            width:100%;
+            border-collapse:collapse;
+        }
+        .tracker-table th,.tracker-table td{
+            padding:.75rem;
+            border:1px solid #d0d0d0;
+            text-align:left;
+            vertical-align:top;
+        }
+        .tracker-table th{
+            background:#f5f5f5;
+        }
+        .status{
+            white-space:nowrap;
+            font-weight:700;
+        }
+        .status-done{color:#176b3a;}
+        .status-next{color:var(--color-action);}
+        .status-wait{color:var(--color-muted);}
+        .checklist{
+            display:grid;
+            gap:.75rem;
+        }
+        .checklist label{
+            display:flex;
+            gap:.65rem;
+            align-items:flex-start;
+            font-weight:400;
+        }
+        .checklist input{
+            inline-size:1.25rem;
+            block-size:1.25rem;
+            flex:0 0 auto;
+        }
+        .note{
+            padding:1rem;
+            border-left:.4rem solid var(--color-accent);
+            background:#fff9df;
+        }
+        </style>
+    </head>
+    <body>
+        <header class="page-header">
+            <p class="eyebrow">Assessment project map</p>
+            <h1>Inclusive Form Flow Project Tracker</h1>
+            <p class="lede">A local checklist for completing the starter-derived form one approved step at a time.</p>
+        </header>
+        <main>
+            <section aria-labelledby="current-status">
+                <h2 id="current-status">Current status</h2>
+                <p class="note"><strong>Active point:</strong> Step 3 is waiting for the bounded form task to be chosen. Do not expand the sample form until the field inventory is complete.</p>
+            </section>
+
+            <section aria-labelledby="workflow-map">
+                <h2 id="workflow-map">Workflow map</h2>
+                <table class="tracker-table">
+                    <thead>
+                        <tr>
+                            <th>Step</th>
+                            <th>Deliverable</th>
+                            <th>Evidence to keep</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Download and expand the starter.</td>
+                            <td>Starter files are present in the local project folder.</td>
+                            <td class="status status-done">Complete</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Place the project in the approved GitHub workspace.</td>
+                            <td>GitHub Desktop recognizes the local repository on the main branch.</td>
+                            <td class="status status-done">Complete</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Choose one bounded task and complete the field inventory.</td>
+                            <td>Task statement plus a justified row for every proposed value.</td>
+                            <td class="status status-next">Active</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Replace placeholders and build F1-F6 into the prototype.</td>
+                            <td>Completed index.html and linked supporting evidence.</td>
+                            <td class="status status-wait">Waiting</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Extend the Module 1 design system in styles.css.</td>
+                            <td>Responsive layout and visible focus, error, disabled, and valid states.</td>
+                            <td class="status status-wait">Waiting</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Run the fictional-data test record and publish the project.</td>
+                            <td>Validation results, screenshots, AI disclosure, repository link, and prototype link.</td>
+                            <td class="status status-wait">Waiting</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section aria-labelledby="evidence-map">
+                <h2 id="evidence-map">Required evidence map</h2>
+                <div class="checklist">
+                    <label><input type="checkbox"> F1: purpose, audience, next step, time, required/optional convention, privacy statement</label>
+                    <label><input type="checkbox"> F2: completed field inventory with minimization decisions</label>
+                    <label><input type="checkbox"> F3: 8-14 purposeful controls, two fieldsets, four suitable control types</label>
+                    <label><input type="checkbox"> F4: pre-entry requirements, native constraints, examples, and recovery guidance</label>
+                    <label><input type="checkbox"> F5: default, focus, required, valid, invalid, disabled, and static server-error specimens</label>
+                    <label><input type="checkbox"> F6: design system, responsive behavior, test record, fictional data, AI disclosure, organized code</label>
+                </div>
+            </section>
+
+            <section aria-labelledby="test-map">
+                <h2 id="test-map">Test record map</h2>
+                <div class="checklist">
+                    <label><input type="checkbox"> HTML validation</label>
+                    <label><input type="checkbox"> CSS validation</label>
+                    <label><input type="checkbox"> Keyboard-only completion and submission attempt</label>
+                    <label><input type="checkbox"> Accessible-name and group inspection</label>
+                    <label><input type="checkbox"> Empty, malformed, boundary-minimum, boundary-maximum, and valid submissions</label>
+                    <label><input type="checkbox"> 320px, 768px, and 1280px viewport checks</label>
+                    <label><input type="checkbox"> 200% zoom/reflow</label>
+                    <label><input type="checkbox"> Focus visibility and pointer/touch operation</label>
+                    <label><input type="checkbox"> Query-string inspection only if temporary GET submission is authorized</label>
+                </div>
+            </section>
+
+            <section aria-labelledby="submission-map">
+                <h2 id="submission-map">Submission packet</h2>
+                <div class="checklist">
+                    <label><input type="checkbox"> Repository link</label>
+                    <label><input type="checkbox"> Published prototype link</label>
+                    <label><input type="checkbox"> Completed field-inventory-template.html</label>
+                    <label><input type="checkbox"> State specimen and static server-error example in index.html</label>
+                    <label><input type="checkbox"> Completed test record and screenshots</label>
+                    <label><input type="checkbox"> AI disclosure with adopted/rejected suggestions and verification</label>
+                    <label><input type="checkbox"> Brief code defense, if requested</label>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

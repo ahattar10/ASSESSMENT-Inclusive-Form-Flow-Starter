@@ -46,14 +46,74 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Example only</td>
-                        <td>Replace</td>
-                        <td>Yes/No</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace or N/A</td>
-                        <td>Replace or none</td>
-                        <td>Replace</td>
+                        <td>Full name</td>
+                        <td>Identify the registrant and address the confirmation.</td>
+                        <td>Yes</td>
+                        <td>Text input</td>
+                        <td>name</td>
+                        <td>autocomplete="name"</td>
+                        <td>At least 2 characters; enter a name, not a title or account number.</td>
+                        <td>Direct identifier; necessary for registration confirmation. Do not collect a home address or legal name unless required.</td>
+                    </tr>
+                    <tr>
+                        <td>Email address</td>
+                        <td>Send the registration confirmation and workshop access details.</td>
+                        <td>Yes</td>
+                        <td>Email input</td>
+                        <td>email</td>
+                        <td>autocomplete="email"; inputmode="email"</td>
+                        <td>Must use a valid email format; example: alex@example.com.</td>
+                        <td>Contact information; necessary for the stated follow-up. Use fictional addresses during testing.</td>
+                    </tr>
+                    <tr>
+                        <td>Workshop session</td>
+                        <td>Reserve the registrant's requested session.</td>
+                        <td>Yes</td>
+                        <td>Radio group</td>
+                        <td>workshop_session</td>
+                        <td>N/A</td>
+                        <td>Choose one available fictional session: morning, afternoon, or evening.</td>
+                        <td>Scheduling preference; limited to the sessions needed to complete registration.</td>
+                    </tr>
+                    <tr>
+                        <td>Attendance format</td>
+                        <td>Provide the correct location or access instructions.</td>
+                        <td>Yes</td>
+                        <td>Radio group</td>
+                        <td>attendance_format</td>
+                        <td>N/A</td>
+                        <td>Choose one: in person or online.</td>
+                        <td>Service preference; no device, network, or location details are collected.</td>
+                    </tr>
+                    <tr>
+                        <td>Accessibility accommodation request</td>
+                        <td>Give the organizer an opportunity to prepare an accessible experience.</td>
+                        <td>No</td>
+                        <td>Textarea</td>
+                        <td>accommodation</td>
+                        <td>autocomplete="off"</td>
+                        <td>Optional; up to 300 characters. Request an accommodation without medical history or diagnosis.</td>
+                        <td>Potentially sensitive; optional, minimized, and limited to access needs relevant to this workshop.</td>
+                    </tr>
+                    <tr>
+                        <td>Questions or notes</td>
+                        <td>Capture a short workshop-related question that needs a reply.</td>
+                        <td>No</td>
+                        <td>Textarea</td>
+                        <td>notes</td>
+                        <td>autocomplete="off"</td>
+                        <td>Optional; up to 500 characters. Include only information relevant to the workshop.</td>
+                        <td>Free-text content can become sensitive; instruct users not to include passwords, payment details, or unrelated personal information.</td>
+                    </tr>
+                    <tr>
+                        <td>Registration acknowledgment</td>
+                        <td>Confirm that the person understands this request is for the selected fictional workshop and that a confirmation will follow.</td>
+                        <td>Yes</td>
+                        <td>Checkbox</td>
+                        <td>registration_acknowledged=accepted</td>
+                        <td>N/A</td>
+                        <td>Must be checked before submission.</td>
+                        <td>Not personal data; a necessary acknowledgment for this prototype. No marketing consent is bundled into it.</td>
                     </tr>
                 </tbody>
             </table>
