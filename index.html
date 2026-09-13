@@ -3,64 +3,113 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>Inclusive Form Flow</title><link rel="stylesheet" href="styles.css">
+        <title>Community Workshop Registration</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header class="page-header">
-            <p class="eyebrow">Application, Registration, or Request</p>
-            <h1>Replace with a specific task title</h1>
-            <p class="lede">Explain who this form is for, what it accomplishes, how long it takes, and what happens after submission.</p>
+            <p class="eyebrow">Community learning program</p>
+            <h1>Register for a community workshop</h1>
+            <p class="lede">Use this form to reserve one place in a fictional community workshop. It is for people who want to attend an upcoming session.</p>
         </header>
         <main>
             <section id="expectations">
                 <h2>F1 · Purpose and Expectations</h2>
-                <p>State the required/optional convention and a concise privacy notice. Use fictional test data only.</p>
+                <p>Registration takes about 3 minutes. Fields marked <strong>required</strong> must be completed; all other fields are optional.</p>
+                <p>After you submit, the fictional workshop team will review your choices and send confirmation and access details to your email address. This prototype does not collect or send real information.</p>
+                <p><a href="field-inventory-template.html">View the task and data plan</a>. Use fictional information for every test.</p>
             </section>
             <form action="" method="get">
                 <fieldset>
-                    <legend>F3 · Contact information</legend>
-                    <p class="help">Replace or extend this group based on your justified field inventory.</p>
+                    <legend>Contact information</legend>
+                    <p class="help">We need a name for the registration and an email address for the fictional confirmation.</p>
                     <div class="field">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text" autocomplete="name">
+                        <label for="name">Full name <span>(required)</span></label>
+                        <input id="name" name="name" type="text" autocomplete="name" minlength="2" required>
                     </div>
                     <div class="field">
                         <label for="email">Email address (required)</label>
-                        <input id="email" name="email" type="email" autocomplete="email" required>
+                        <p class="help" id="email-help">Example: alex@example.com</p>
+                        <input id="email" name="email" type="email" autocomplete="email" inputmode="email" aria-describedby="email-help" required>
                     </div>
                 </fieldset>
                 <fieldset>
-                    <legend>F3 · Request choices</legend>
-                    <p class="help">Use an appropriate radio, checkbox, or select structure for the task.</p>
-                    <label class="choice">
-                        <input type="radio" name="request_type" value="option-a"> Replace with option A</label>
-                        <label class="choice"><input type="radio" name="request_type" value="option-b"> Replace with option B</label>
-                    </fieldset>
+                    <legend>Workshop choices</legend>
                     <div class="field">
-                        <label for="details">Request details</label>
-                        <p class="help" id="details-help">Explain the expected content and any limit before entry.</p>
-                        <textarea id="details" name="details" aria-describedby="details-help"></textarea>
+                        <p id="session-help" class="help">Choose one available fictional session. (required)</p>
+                        <div role="group" aria-labelledby="session-help">
+                            <label class="choice"><input type="radio" name="workshop_session" value="morning" required> Saturday morning</label>
+                            <label class="choice"><input type="radio" name="workshop_session" value="afternoon"> Saturday afternoon</label>
+                            <label class="choice"><input type="radio" name="workshop_session" value="evening"> Wednesday evening</label>
+                        </div>
                     </div>
-                    <button type="submit">Replace with a specific action</button>
-                </form>
-                <section id="states">
-                    <h2>F5 · State and Recovery Specimen</h2>
-                    <p>Document default, focus, required, valid, invalid, disabled, and a static server-returned error. Keep this section separate from the primary blank form when necessary to avoid misleading users.</p>
-                    <div class="error-summary">
-                        <h3>There is a problem with the fictional submission</h3>
-                        <p><a href="#error-example">Email address needs attention</a></p>
+                    <div class="field">
+                        <p id="format-help" class="help">How will you attend? (required)</p>
+                        <div role="group" aria-labelledby="format-help">
+                            <label class="choice"><input type="radio" name="attendance_format" value="in_person" required> In person</label>
+                            <label class="choice"><input type="radio" name="attendance_format" value="online"> Online</label>
+                        </div>
                     </div>
-                    <div class="field field-error">
-                        <label for="error-example">Email address</label>
-                        <input id="error-example" type="email" value="alex.example" aria-invalid="true" aria-describedby="error-message">
-                        <p id="error-message"><strong>Error:</strong> Enter an address in the format name@example.com.</p>
+                </fieldset>
+                <div class="field">
+                    <label for="accommodation">Accessibility accommodation request (optional)</label>
+                    <p class="help" id="accommodation-help">Tell us only what access support would help you participate. Do not include medical history. Up to 300 characters.</p>
+                    <textarea id="accommodation" name="accommodation" maxlength="300" aria-describedby="accommodation-help"></textarea>
+                </div>
+                <div class="field">
+                    <label for="notes">Questions or notes (optional)</label>
+                    <p class="help" id="notes-help">Include only workshop-related information. Do not include passwords, payment details, or unrelated personal information. Up to 500 characters.</p>
+                    <textarea id="notes" name="notes" maxlength="500" aria-describedby="notes-help"></textarea>
+                </div>
+                <label class="choice">
+                    <input type="checkbox" name="registration_acknowledged" value="accepted" required>
+                    I understand this is a registration request for the selected fictional workshop and that a confirmation will follow. (required)
+                </label>
+                <button type="submit">Request workshop registration</button>
+            </form>
+            <section id="requirements">
+                <h2>F4 · Requirements before entry</h2>
+                <ul>
+                    <li>Enter a name with at least two characters and use an email address in the example format.</li>
+                    <li>Choose one session and one attendance format.</li>
+                    <li>Optional messages must stay within their stated character limits and should contain workshop-related information only.</li>
+                    <li>Check the acknowledgment before submitting.</li>
+                </ul>
+            </section>
+            <section id="states">
+                <h2>F5 · State and recovery specimen</h2>
+                <p>These examples document the states a person may encounter. The primary form above remains blank for testing.</p>
+                <div class="state-grid">
+                    <div class="state-example">
+                        <h3>Default and focus</h3>
+                        <p>Fields begin empty. A keyboard focus ring uses a gold outline and remains visible against the page.</p>
                     </div>
-                    <button type="button" disabled>Disabled example</button>
-                </section>
-                <section id="documentation">
-                    <h2>F2 and F6 · Planning and Evidence</h2>
-                    <p>Link your field inventory, state matrix, fictional test-data list, completed test record, and AI disclosure.</p>
-                </section>
+                    <div class="state-example">
+                        <h3>Required, valid, and disabled</h3>
+                        <p>Required controls are announced by their labels and native validation. A valid email follows the example format. The disabled example below cannot be changed.</p>
+                        <button type="button" disabled>Registration temporarily unavailable</button>
+                    </div>
+                </div>
+                <div class="error-summary">
+                    <h3>There is a problem with the fictional submission</h3>
+                    <p><a href="#error-example">Email address needs attention</a></p>
+                </div>
+                <div class="field field-error">
+                    <label for="error-example">Email address</label>
+                    <input id="error-example" type="email" value="alex.example" aria-invalid="true" aria-describedby="error-message">
+                    <p id="error-message"><strong>Error:</strong> Enter an address in the format name@example.com. Your other entries stay in the form; correct this field and submit again.</p>
+                </div>
+            </section>
+            <section id="documentation">
+                <h2>F6 · Evidence and documentation</h2>
+                <p>Supporting evidence is kept with this prototype in the local project folder.</p>
+                <ul>
+                    <li><a href="field-inventory-template.html">F2 task and data plan</a></li>
+                    <li><a href="assessment-tracker.html">Project tracker and test checklist</a></li>
+                    <li>Test data rule: use fictional values such as Alex Example and alex@example.com only.</li>
+                    <li>AI disclosure: GitHub Copilot was used to draft and revise code and planning content. Suggestions were reviewed against the assignment requirements and checked in the workspace; rejected suggestions are recorded in the project notes when testing is complete.</li>
+                </ul>
+            </section>
             </main>
         </body>
         </html>
