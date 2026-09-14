@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Community Workshop Registration - Test Record</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+        .test-table{
+            width:100%;
+            border-collapse:collapse;
+        }
+        .test-table th,.test-table td{
+            padding:.75rem;
+            border:1px solid var(--color-border-soft);
+            text-align:left;
+            vertical-align:top;
+        }
+        .test-table th{
+            background:var(--color-surface-alt);
+        }
+        .pass{
+            color:#176b3a;
+            font-weight:700;
+        }
+        .note{
+            padding:1rem;
+            border-left:.4rem solid var(--color-accent);
+            background:#fff9df;
+        }
+        </style>
+    </head>
+    <body>
+        <header class="page-header">
+            <p class="eyebrow">F6 evidence</p>
+            <h1>Community Workshop Registration Test Record</h1>
+            <p class="lede">Results from fictional-data testing of the starter-derived prototype.</p>
+        </header>
+        <main>
+            <p class="note"><strong>Privacy boundary:</strong> All values used in these tests were fictional. No real personal information was entered or submitted.</p>
+            <section aria-labelledby="results-heading">
+                <h2 id="results-heading">Test results</h2>
+                <table class="test-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Test</th>
+                            <th scope="col">Result</th>
+                            <th scope="col">Observed evidence</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">HTML check</th><td class="pass">Pass</td><td>Workspace diagnostics reported no errors for index.html.</td></tr>
+                        <tr><th scope="row">CSS check</th><td class="pass">Pass</td><td>Workspace diagnostics reported no errors for styles.css.</td></tr>
+                        <tr><th scope="row">Empty submission</th><td class="pass">Pass</td><td>Native validation focused Full name and displayed “Please fill out this field.” <a href="screenshots/03-empty-submission-validation.png">Screenshot</a></td></tr>
+                        <tr><th scope="row">Malformed email</th><td class="pass">Pass</td><td>Native email validation rejected alex.example and preserved entries. <a href="screenshots/04-malformed-email-validation.png">Screenshot</a></td></tr>
+                        <tr><th scope="row">Valid fictional submission</th><td class="pass">Pass</td><td>Fictional values were accepted and submitted. <a href="screenshots/05-valid-fictional-submission.png">Screenshot</a></td></tr>
+                        <tr><th scope="row">Keyboard-only completion</th><td class="pass">Pass</td><td>Tab, typing, Space, arrow keys, and Enter completed and submitted the form. <a href="screenshots/07-keyboard-only-completion.png">Screenshot</a></td></tr>
+                        <tr><th scope="row">Accessible focus visibility</th><td class="pass">Pass</td><td>Gold focus outlines were visible on form controls. <a href="screenshots/06-keyboard-focus.png">Screenshot</a></td></tr>
+                        <tr><th scope="row">320px viewport</th><td class="pass">Pass</td><td>No observed clipping or unusable controls. <a href="screenshots/08-viewport-320px.png">Screenshot</a></td></tr>
+                        <tr><th scope="row">768px viewport</th><td class="pass">Pass</td><td>Form remained readable and responsive. <a href="screenshots/09-viewport-768px.png">Screenshot</a></td></tr>
+                        <tr><th scope="row">1280px viewport</th><td class="pass">Pass</td><td>Content remained centered with a comfortable reading width. <a href="screenshots/10-viewport-1280px.png">Screenshot</a></td></tr>
+                        <tr><th scope="row">200% zoom/reflow</th><td class="pass">Pass</td><td>Text reflowed and remained usable without observed overlap. <a href="screenshots/11-zoom-200-percent-reflow.png">Screenshot</a></td></tr>
+                        <tr><th scope="row">Static server-error specimen</th><td class="pass">Pass</td><td>Error summary, field link, invalid cue, and recovery instruction are visible. <a href="screenshots/02-static-server-error.png">Screenshot</a></td></tr>
+                    </tbody>
+                </table>
+            </section>
+            <section aria-labelledby="data-heading">
+                <h2 id="data-heading">Fictional test data</h2>
+                <ul>
+                    <li>Name: Alex Example</li>
+                    <li>Email: alex@example.com</li>
+                    <li>Malformed email test: alex.example</li>
+                    <li>Workshop session: Saturday morning</li>
+                    <li>Attendance format: Online</li>
+                    <li>Accommodation and notes: left blank</li>
+                </ul>
+                <p>The GET query string was inspected locally during testing. Confirm instructor authorization before including query-string evidence in a published submission.</p>
+            </section>
+            <section aria-labelledby="ai-heading">
+                <h2 id="ai-heading">AI disclosure</h2>
+                <p>GitHub Copilot was used to help draft the tracker, field inventory, form copy, CSS, and test-record structure. Suggestions adopted were reviewed against the assignment requirements, checked in the workspace, and verified through the documented browser tests. Suggestions were rejected when they did not match the approved bounded task, privacy boundary, or required evidence.</p>
+            </section>
+            <p><a href="index.html">Return to the registration form</a> · <a href="assessment-tracker.html">View the project tracker</a></p>
+        </main>
+    </body>
+</html>
